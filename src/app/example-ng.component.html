@@ -1,0 +1,33 @@
+
+<div class="text-layout">
+  
+    <h1>{{name |titlecase}}</h1>
+    
+    <h2>{{value |number}}</h2>
+    
+    <h3>{{value | currency}}</h3>
+  </div>
+  
+  
+  <button 
+      pButton 
+      type="button" 
+      label="Change Name"
+      class="p-button-help"
+      icon="pi pi-share-alt" 
+      iconPos="right"
+      (click)="showName()"
+  >
+  </button>
+  
+  <br> 
+  
+  <p-card 
+    [header]="name | titlecase"
+    subheader="This is a subheader..."
+  >
+     
+  
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur earum ipsum debitis cumque dolorum autem unde incidunt! Aperiam modi quos magni, unde ex id consectetur, quia, officiis quibusdam sapiente distinctio!
+  
+  </p-card>

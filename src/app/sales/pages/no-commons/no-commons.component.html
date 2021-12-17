@@ -1,0 +1,91 @@
+<div class="text-layout">
+    <h1>No Common Pipes</h1>
+    <p>
+        Pipes included in Angular - Usually in Common Module.
+    </p>
+   
+<div class="grid">
+    <div class="col md-6 ">
+       
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+            {{name}}, is my friend and {{genre | i18nSelect:genreMap}} favorite color is blue.
+            <br>
+            <hr>
+            <button 
+          pButton 
+          type="button" 
+          label="Change Person"
+          class="p-button-help"
+          icon="pi pi-arrows-h" 
+          iconPos="right"
+          (click)="changeName()"
+      >
+      </button>
+        </p-fieldset>
+    </div>
+    <div class="col md-6 ">
+       
+        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+            Currently {{clients.length|i18nPlural:clientsMap}}
+            <br>
+            <hr>
+            <button 
+          pButton 
+          type="button" 
+          label="Decrement client"
+          class="p-button-help"
+          icon="pi pi-caret-down" 
+          iconPos="right"
+          (click)="decreentPerson()"
+      >
+      </button>
+        </p-fieldset>
+        
+    </div>
+    
+    <div class="col md-6 ">
+       
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+           <b>Original</b>
+           <pre>{{clients}}</pre>
+           
+           <b>Silice 0:2</b>
+           <pre>{{clients | slice:0:2}}</pre>
+          
+           <b>Silice 2:3</b>
+           <pre>{{clients | slice:2:3}}</pre>
+           
+           <b>Silice 1:3</b>
+           <pre>{{clients | slice:1:3}}</pre>
+
+
+           
+        </p-fieldset>
+        
+    </div>
+    
+    <div class="col md-6 ">
+       
+        <p-fieldset legend="Key Value Pipe" [toggleable]="true">
+   
+            <ul>
+                <li *ngFor="let item of person|keyvalue">
+                    <b>{{ item.key| titlecase}}:</b>{{item.value}}
+                </li>
+            </ul>
+        </p-fieldset>
+        
+    </div>
+    <div class="col md-6 ">
+       <!-- must be a promise or observable -->
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+   
+            <b>Observable:</b><pre>{{myObservable|async}}</pre>
+            <br>
+            <b>Promise</b><pre>{{valuePrommise|async}}</pre>
+        </p-fieldset>
+        
+    </div>
+    
+</div>
+</div>
